@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, use } from "react";
+import { useEffect, useState, useRef, } from "react";
 import { CldImage } from "next-cloudinary";
 
 const socialFormats = {

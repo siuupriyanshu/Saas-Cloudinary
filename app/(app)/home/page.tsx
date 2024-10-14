@@ -31,7 +31,7 @@ function Home() {
     }, [fetchVideos])
 
     const handleDownload = useCallback((url: string, title: string) => {
-        () => {
+        
             const link = document.createElement("a");
             link.href = url;
             link.setAttribute("download", `${title}.mp4`);
@@ -40,7 +40,7 @@ function Home() {
             link.click();
             document.body.removeChild(link);
 
-        }
+        
 
     }, [])
 
@@ -51,7 +51,7 @@ function Home() {
     return (
         <div className="container mx-auto p-4">
           <h1 className="text-2xl font-bold mb-4">Videos</h1>
-          {videos.length === 0 ? (
+          { error? ( <p className="text-center text-lg text-red-500">{error}</p>) : videos.length === 0 ? (
             <div className="text-center text-lg text-gray-500">
               No videos available
             </div>
